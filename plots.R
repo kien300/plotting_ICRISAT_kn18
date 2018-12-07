@@ -1,8 +1,10 @@
 library(tidyverse)
 
-data(iris)
+Ex1 <- read.csv("R Graphics.csv")
+irri_yes <- Ex1 %>% filter(irrigation == "yes")
+irri_no <- Ex1 %>% filter(irrigation == "no")
 
-head(iris)
-
-ggplot(iris) +
-  geom_point(aes(Sepal.Length, Sepal.Width))
+qplot(yield, conc, data = irri_yes,
+      xlab = "Concentration",
+      ylab = "Yield",
+      main = "Yi")
